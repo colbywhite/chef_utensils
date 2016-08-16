@@ -1,3 +1,6 @@
+# load knife tasks
+require 'chef_utensils/knife'
+
 # load rubocop tasks
 require 'rubocop/rake_task'
 RuboCop::RakeTask.new

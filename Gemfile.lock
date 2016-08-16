@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    chef_utensils (0.1.0)
+    chef_utensils (0.1.1)
       chef (~> 12.12.15)
       chefspec (~> 4.7.0)
       foodcritic (~> 6.3)
