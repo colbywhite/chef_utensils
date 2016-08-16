@@ -1,12 +1,15 @@
 # ChefUtensils
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/chef_utensils`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem contains boilerplate code to put common Rake taks that are
+associated with Chef cookbook projects. The goal is to make it easy to
+add these rake tasks to your cookbooks' `Rakefile` without copy-pasting
+a bunch of boilerplate code around.
 
-TODO: Delete this and the text above, and describe your gem
+The name is attempting to deliver yet another cooking pun.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
 ```ruby
 gem 'chef_utensils'
@@ -14,7 +17,7 @@ gem 'chef_utensils'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
@@ -22,20 +25,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add the tasks to your `Rakefile` with the following:
 
-## Development
+```
+require 'chef_utensils/tasks'
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+That's it. After that, you can look at all the tasks that were added via rake's `-T` option.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/chef_utensils. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+    $ bundle exec rake -T
+    rake chef:foodcritic              # Run foodcritic
+    rake foodcritic                   # Easier to type alias for chef:foodcritic
+    rake kitchen                      # Easier to type alias for kitchen:all
+    rake kitchen:all                  # Run all test instances
+    rake kitchen:default-ubuntu-1404  # Run default-ubuntu-1404 test instance
+    rake lint                         # Run linting tools
+    rake rspec                        # Run RSpec code examples
+    rake rubocop                      # Run RuboCop
+    rake rubocop:auto_correct         # Auto-correct RuboCop offenses
+    rake spec                         # Easier to type alias for rspec
