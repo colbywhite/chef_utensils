@@ -1,5 +1,5 @@
 # load knife tasks
-require 'chef_utensils/knife'
+require 'chef_utensils/tasks/knife'
 
 # load rubocop tasks
 require 'rubocop/rake_task'
