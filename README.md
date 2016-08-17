@@ -29,6 +29,7 @@ Add the tasks to your `Rakefile` with the following:
 
 ```
 require 'chef_utensils/tasks'
+require 'chef_utensils/tasks/kitchen' # Use this if you are using kitchen and want those tasks as well
 ```
 
 That's it. After that, you can look at all the tasks that were added via rake's `-T` option.

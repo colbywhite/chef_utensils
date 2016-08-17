@@ -18,12 +18,5 @@ require 'rake-foodcritic'
 desc 'Shorter alias for chef:foodcritic'
 task foodcritic: 'chef:foodcritic'
 
-# load kitchen tasks
-require 'kitchen/rake_tasks'
-Kitchen::RakeTasks.new
-
-desc 'Shorter alias for kitchen:all'
-task kitchen: 'kitchen:all'
-
 desc 'Run all linting tools'
 task lint: [:rubocop, :foodcritic]
