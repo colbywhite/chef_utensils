@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   # TODO: find a way to just depend on a specific version of a chef-dk
   spec.add_dependency 'rake', '~> 11.2.2'
   spec.add_dependency 'chefspec', '~> 4.7.0'
+  spec.add_dependency 'berkshelf', '~> 4.3.5'
   spec.add_dependency 'rubocop', '~> 0.42.0'
   spec.add_dependency 'foodcritic', '~> 6.3'
   spec.add_dependency 'chef', '~> 12.12.15'
