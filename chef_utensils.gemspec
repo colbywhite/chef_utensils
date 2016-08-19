@@ -15,27 +15,15 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://bitbucket.org/wfmdigitalweb/chef_utensils'
   spec.license = 'MIT'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  # if spec.respond_to?(:metadata) then
-  #   spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  # else
-  #   raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
-  # end
-
   spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.require_paths = %w(lib)
 
-  spec.add_development_dependency 'bundler', '~> 1.12'
-  # TODO: find a way to just depend on a specific version of a chef-dk
-  spec.add_dependency 'rake', '~> 11.2.2'
-  spec.add_dependency 'chefspec', '~> 4.7.0'
-  spec.add_dependency 'berkshelf', '~> 4.3.5'
-  spec.add_dependency 'rubocop', '~> 0.42.0'
-  spec.add_dependency 'foodcritic', '~> 6.3'
-  spec.add_dependency 'chef', '~> 12.12.15'
-  spec.add_dependency 'rake-foodcritic', '~> 0.0.3'
-  spec.add_dependency 'test-kitchen', '~> 1.10.2'
-  spec.add_dependency 'kitchen-dokken', '~> 0.0.31'
-  spec.add_dependency 'kitchen-inspec', '~> 0.15.0'
+  spec.add_development_dependency 'bundler', '1.12.5'
+  spec.add_development_dependency 'rake', '11.2.2'
+  spec.add_development_dependency 'rubocop', '0.42.0'
+  spec.add_development_dependency 'rspec', '3.5.0'
+  # No runtime dependencies because this is expected to be installed into chefdk v0.17.17 and
+  # it is not recommended to install chefdk via gems or bundler. As long as it installed into the
+  # chefdk's embedded ruby, its dependencies will work just fine.
+  # TODO add some runtime check that it is running in chefdk so an intelligent error comes back if it is not.
 end
