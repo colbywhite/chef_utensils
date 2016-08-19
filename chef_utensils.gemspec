@@ -22,8 +22,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '11.2.2'
   spec.add_development_dependency 'rubocop', '0.42.0'
   spec.add_development_dependency 'rspec', '3.5.0'
-  # No runtime dependencies because this is expected to be installed into chefdk v0.17.17 and
+  spec.add_dependency 'rake-foodcritic', '~> 0.0.3'
+  # No further runtime dependencies because this is expected to be installed into chefdk v0.17.17 and
   # it is not recommended to install chefdk via gems or bundler. As long as it installed into the
-  # chefdk's embedded ruby, its dependencies will work just fine.
+  # chefdk's embedded ruby, the rest of the dependencies will work just fine.
   # TODO add some runtime check that it is running in chefdk so an intelligent error comes back if it is not.
 end
