@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    chef_utensils (0.1.6)
+    chef_utensils (0.1.7)
       rake-foodcritic (~> 0.0.3)
 
 GEM
@@ -12,7 +12,7 @@ GEM
       gherkin (~> 4.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    foodcritic (7.1.0)
+    foodcritic (7.0.1)
       cucumber-core (>= 1.3)
       erubis
       nokogiri (>= 1.5, < 2.0)
