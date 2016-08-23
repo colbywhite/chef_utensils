@@ -8,7 +8,7 @@ task :upload, [:env, :freeze] do |_, args|
   knife_args = %w(cookbook upload)
   knife_args += [metadata.name]
   knife_args += ['-E', args[:env]] if args[:env]
-  knife_args += ['--freeze'] if args[:freeze]
+  knife_args += ['--freeze'] if args[:freeze] == 'true'
   Chef::Log.init $stdout
   Chef::Log.level :info
   Chef::Log.info "+ knife #{knife_args.join ' '}"
