@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    chef_utensils (0.1.8)
+    chef_utensils (0.2.0)
       rake-foodcritic (~> 0.0.3)
 
 GEM
